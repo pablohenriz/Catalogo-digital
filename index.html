@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+     <title>Catálogo Mini Kids</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <header class="top">
+          <div class="wrap">
+               <div class="brand-row"><span class="sign">KIDS</span>
+                    <h1>Mini Kids</h1>
+               </div>
+               <p class="tag">Roupas infantis. Escolha o tamanho, monte o carrinho e finalize pelo WhatsApp.</p>
+          </div>
+     </header>
+
+     <main class="wrap">
+          <section class="filters" aria-label="Filtros">
+               <div class="fgroup"><span class="flabel">Categoria</span>
+                    <div class="scroll" id="cats"></div>
+               </div>
+               <div class="fgroup"><span class="flabel">Cor</span>
+                    <div class="scroll" id="fcolors"></div>
+               </div>
+               <div class="fgroup"><span class="flabel">Tamanho</span>
+                    <div class="scroll" id="fsizes"></div>
+               </div>
+               <div class="meta">
+                    <p class="count" id="count" aria-live="polite"></p><button class="link" id="clear" data-act="clear"
+                         data-f="clear" hidden>Limpar filtros</button>
+               </div>
+          </section>
+
+          <section class="grid" id="grid" aria-label="Produtos"></section>
+
+          <footer class="foot">
+               <label for="store">WhatsApp da loja (recebe os pedidos)</label>
+               <input id="store" type="tel" inputmode="numeric" placeholder="(11) 99999-9999" autocomplete="off">
+               <p>DDD + número. Fica salvo neste navegador.</p>
+          </footer>
+     </main>
+
+     <div class="cartbar" id="bar" hidden>
+          <button class="cartbtn" id="opencart" data-act="opencart"><span id="bcount"></span><span
+                    id="btotal"></span></button>
+     </div>
+     <div class="toast" id="toast" role="status"></div>
+
+     <div class="overlay" id="ov" hidden>
+          <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+               <div class="sheet-head">
+                    <h2 id="sheetTitle">Seu pedido</h2><button class="x" id="close" data-act="closecart"
+                         aria-label="Fechar">×</button>
+               </div>
+               <ul class="items" id="items"></ul>
+               <div class="totalrow"><span>Total</span><strong id="total"></strong></div>
+               <form class="form" id="form" novalidate>
+                    <div class="field"><label for="cname">Seu nome</label><input id="cname" type="text"
+                              autocomplete="name" placeholder="Maria Silva"></div>
+                    <div class="field"><label for="cphone">Seu WhatsApp</label><input id="cphone" type="tel"
+                              inputmode="numeric" autocomplete="tel" placeholder="(11) 99999-9999"></div>
+                    <fieldset>
+                         <span class="legend">Forma de pagamento</span>
+                         <div class="pays">
+                              <label class="opt"><input type="radio" name="pay" value="Pix"
+                                        checked><span>Pix</span></label>
+                              <label class="opt"><input type="radio" name="pay"
+                                        value="Cartão de crédito"><span>Crédito</span></label>
+                              <label class="opt"><input type="radio" name="pay"
+                                        value="Cartão de débito"><span>Débito</span></label>
+                              <label class="opt"><input type="radio" name="pay"
+                                        value="Dinheiro"><span>Dinheiro</span></label>
+                         </div>
+                    </fieldset>
+                    <div class="field"><label for="cobs">Observação (opcional)</label><input id="cobs" type="text"
+                              placeholder="Ex.: retiro na loja amanhã"></div>
+                    <div>
+                         <a class="send" id="send" target="_blank" rel="noopener" aria-disabled="true">Enviar pedido no
+                              WhatsApp</a>
+                         <p class="hint" id="hint"></p>
+                    </div>
+               </form>
+          </section>
+     </div>
+
+     <script src="script.js"></script>
+</body>
+
+</html>
